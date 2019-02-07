@@ -8,6 +8,7 @@ const User = require('../../models/User');
 const keys = require('../../config/keys');
 
 const validateRegisterInput = require('../../validation/register');
+const validateLoginInput = require('../../validation/login');
 
 // @route   GET api/users/test
 // @desc    tests user route
@@ -67,6 +68,12 @@ router.post('/register', (req, res) => {
 // @desc    login the user / return a token
 // @access  Public
 router.post('/login', (req, res) => {
+
+    const { errors, isValid } = validateLoginInput(req.body);
+
+    if(!isValid) {
+        return res.status(400).json(errors);
+    }
 
     const email = req.body.email;
     const password = req.body.password;

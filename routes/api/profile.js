@@ -44,7 +44,8 @@ router.get('/', passport.authenticate('jwt', { session: false}),
 // @route   GET api/profile/handle/:handle
 // @desc    get particular user's profile
 // @access  Public
-router.get('/handle/:handle', (req, res) => {
+router.get('/handle/:handle',
+    (req, res) => {
     const errors = {};
 
     Profile.findOne({ 'handle': req.params.handle })
@@ -67,7 +68,8 @@ router.get('/handle/:handle', (req, res) => {
 // @route   GET api/profile/all
 // @desc    get all user profiles
 // @access  Public
-router.get('/all', (req, res) =>  {
+router.get('/all',
+    (req, res) =>  {
     const errors = {};
 
     Profile.find()
@@ -89,7 +91,8 @@ router.get('/all', (req, res) =>  {
 // @route   GET api/profile/user/:id
 // @desc    get particular user's profile (by id)
 // @access  Public
-router.get('/user/:user_id', (req, res) => {
+router.get('/user/:user_id',
+    (req, res) => {
     const errors = {};
 
     Profile.findOne({ 'user': req.params.user_id })

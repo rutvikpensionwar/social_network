@@ -1,4 +1,4 @@
 module.exports = {
-  mongoURI: 'mongodb://rutvik:pass1234@ds051953.mlab.com:51953/ecampus',
+  mongoURI: 'mongodb://localhost:27017/ecampus',
   secretOrKey: 'secret'
 };
