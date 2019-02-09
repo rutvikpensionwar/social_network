@@ -288,7 +288,7 @@ router.post('/education', passport.authenticate('jwt', {session: false}),
 
 
 // @route   DELETE api/profile/education/:edu_id
-// @desc    delete user's education
+// @desc    delete specific user's education
 // @access  Private
 router.delete('/education/:exp_id', passport.authenticate('jwt', {session: false}),
     (req, res) => {
